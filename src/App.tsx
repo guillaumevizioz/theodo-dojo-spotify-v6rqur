@@ -1,5 +1,6 @@
 import logo from './assets/logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 const trackUrls = [
   'https://p.scdn.co/mp3-preview/742294f35af9390e799dd96c633788410a332e52',
@@ -9,7 +10,13 @@ const trackUrls = [
   'https://p.scdn.co/mp3-preview/ac28d1b0be285ed3bfd8e9fa5fad133776d7cf36',
 ];
 
-<audio src={trackUrls[0]} autoPlay controls />
+let trackIndex = 0;
+
+const goToNextTrack = () => {
+  trackIndex += 1;
+}
+
+
 
 const App = () => {
   return (
@@ -20,6 +27,11 @@ const App = () => {
       </header>
       <div className="App-images">
         <p>Il va falloir modifier le code pour faire un vrai blind test ! Essai. Suite de la ligne. Un deux trois, essai.</p>
+        <audio src={trackUrls[0]} autoPlay controls />
+        <audio src={trackUrls[trackIndex]} autoPlay controls />
+        <button onClick={goToNextTrack}>
+            Next track
+        </button>
       </div>
       <div className="App-buttons"></div>
     </div>
