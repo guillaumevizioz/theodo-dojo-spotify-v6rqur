@@ -10,13 +10,11 @@ const trackUrls = [
   'https://p.scdn.co/mp3-preview/ac28d1b0be285ed3bfd8e9fa5fad133776d7cf36',
 ];
 
-let trackIndex = 0;
+const [trackIndex, setTrackIndex] = useState(0)
 
 const goToNextTrack = () => {
-  trackIndex += 1;
+  setTrackIndex(trackIndex + 1);
 }
-
-
 
 const App = () => {
   return (
@@ -27,7 +25,6 @@ const App = () => {
       </header>
       <div className="App-images">
         <p>Il va falloir modifier le code pour faire un vrai blind test ! Essai. Suite de la ligne. Un deux trois, essai.</p>
-        <audio src={trackUrls[0]} autoPlay controls />
         <audio src={trackUrls[trackIndex]} autoPlay controls />
         <button onClick={goToNextTrack}>
             Next track
