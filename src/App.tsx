@@ -10,10 +10,10 @@ const trackUrls = [
   'https://p.scdn.co/mp3-preview/ac28d1b0be285ed3bfd8e9fa5fad133776d7cf36',
 ];
 
-const [trackIndex, setTrackIndex] = useState(0)
+let trackIndex = 0;
 
 const goToNextTrack = () => {
-  setTrackIndex(trackIndex + 1);
+  trackIndex += 1;
 }
 
 const App = () => {
